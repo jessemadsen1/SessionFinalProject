@@ -36,7 +36,7 @@ namespace SessionFinalProject.Pages
                 var link = new SignupCode
                 {
                     Email = email,
-                    ExpiersOn = DateTime.Now.AddMinutes(5),
+                    ExpiersOn = DateTime.Now.AddHours(1),
                     Code = Guid.NewGuid().ToString()
                 };
                 userContext.SignupCodes.Add(link);
