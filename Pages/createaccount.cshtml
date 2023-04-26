@@ -3,4 +3,10 @@
 @{
 }
 
-<h1>Create Account Here</h1>
+<h1>@Model.Message</h1>
+
+<form method="post">
+@*    <input type="hidden" name="code" value="@Model.Code"/>*@
+    <input type="password" name="password" placeholder="password" />
+    <button type="submit">Sign up</button>
+</form>
