@@ -11,14 +11,52 @@ using SessionFinalProject;
 namespace SessionFinalProject.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20230424172423_SignupCode")]
-    partial class SignupCode
+    [Migration("20230427023648_tables")]
+    partial class tables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
+
+            modelBuilder.Entity("SessionFinalProject.Authorzation", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("role")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Authorzation");
+                });
+
+            modelBuilder.Entity("SessionFinalProject.Sessions", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("ExpireOn")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("sessionCode")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("userId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("userId");
+
+                    b.ToTable("Sessions");
+                });
 
             modelBuilder.Entity("SessionFinalProject.SignupCode", b =>
                 {
@@ -66,6 +104,17 @@ namespace SessionFinalProject.Migrations
                         .IsUnique();
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("SessionFinalProject.Sessions", b =>
+                {
+                    b.HasOne("SessionFinalProject.User", "user")
+                        .WithMany()
+                        .HasForeignKey("userId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("user");
                 });
 #pragma warning restore 612, 618
         }

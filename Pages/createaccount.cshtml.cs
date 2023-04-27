@@ -19,7 +19,7 @@ namespace SessionFinalProject.Pages
             {
                 Message = "Invalid link";
             }
-            else if (link.ExpiersOn < DateTime.Now)
+            else if (link.ExpiresOn < DateTime.Now)
             {
                 Message = "Link expired";
             }
@@ -40,6 +40,7 @@ namespace SessionFinalProject.Pages
             var link = userContext.SignupCodes.FirstOrDefault(l => l.Code == code);
             var email = link.Email;
 
+            
             var user = new User
             {
                 Email = email,
