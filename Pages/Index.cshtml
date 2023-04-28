@@ -5,7 +5,14 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p><a href="https://github.com/rnwood/smtp4dev">Install Dev 4 SMTP</a>.</p>
-    <p>Docker docker run --rm -it -p 3000:80 -p 2525:25 rnwood/smtp4dev</p>
+    <h1 class="display-4">@Model.Message</h1>
+    @if (Model.IsLoggedIn)
+    {
+        <p><a href="https://github.com/rnwood/smtp4dev">Install Dev 4 SMTP</a>.</p>
+        <p>Docker docker run --rm -it -p 3000:80 -p 2525:25 rnwood/smtp4dev</p>
+    }
+    else
+    {
+        <p>You need to be logged in to see this content.</p>
+    }
 </div>

@@ -1,0 +1,32 @@
+﻿@page
+@model SessionFinalProject.Pages.SessionsModel
+@{
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Session Code</th>
+            <th>User Email</th>
+            <th>Expire On</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var session in Model.ActiveSessions)
+        {
+            <tr>
+                <td>@session.SessionCode</td>
+                <td>@session.User.Email</td>
+                <td>@session.ExpireOn</td>
+                <td>
+                    <form method="post">
+                        <input type="hidden" name="sessionId" value="@session.Id" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
