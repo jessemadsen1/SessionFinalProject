@@ -5,7 +5,6 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">@Model.Message</h1>
     @if (Model.IsLoggedIn)
     {
         <p><a href="https://github.com/rnwood/smtp4dev">Install Dev 4 SMTP</a>.</p>
@@ -13,6 +12,18 @@
     }
     else
     {
-        <p>You need to be logged in to see this content.</p>
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <h1 class="display-4">@Model.Message</h1>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <p>You need to be logged in to see this content.</p>
+                        </div>
+                        <a href="/login" class="btn btn-primary mt-4 huge-login-button">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
 </div>

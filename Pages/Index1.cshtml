@@ -1,29 +1,30 @@
 ﻿@page
 @model SessionFinalProject.Pages.Index1Model
 @{
-
     ViewData["Title"] = "Logged in";
 }
 <div class="container">
-    @if (Model.IsAdmin)
-    {
-        <h1 class="text-center">You have arrived logged in as Admin</h1>
-    }
-    else
-    {
-        <h1 class="text-center">You have arrived logged in</h1>
-    }
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="embed-responsive embed-responsive-16by9">
-                @if (Model.IsAdmin)
-                {
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1" allowfullscreen></iframe>
-                }
-                else
-                {
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jIQ6UV2onyI?autoplay=1&mute=1" allowfullscreen></iframe>
-                }
+    <div class="content-wrapper">
+        @if (Model.IsAdmin)
+        {
+            <h1 class="text-center">You have arrived logged in as Admin</h1>
+        }
+        else
+        {
+            <h1 class="text-center">You have arrived logged in</h1>
+        }
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="embed-responsive embed-responsive-16by9">
+                    @if (Model.IsAdmin)
+                    {
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1" allowfullscreen></iframe>
+                    }
+                    else
+                    {
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jIQ6UV2onyI?autoplay=1&mute=1" allowfullscreen></iframe>
+                    }
+                </div>
             </div>
         </div>
     </div>

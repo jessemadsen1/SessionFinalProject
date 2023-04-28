@@ -8,7 +8,27 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SessionFinalProject.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('/fotor-ai-20230427204532_2.jpg');
+            background-size: cover;
+            background-position: center;
+        }
 
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.75);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+
+        .huge-login-button {
+            font-size: 2rem;
+            padding: 1rem 2rem;
+            width: 100%;
+            max-width: 700px;
+            background-color: rebeccapurple;
+    </style>
 </head>
 <body>
     <header>
@@ -28,7 +48,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            @if (@Model.IsLoggedIn)
+                            @if (!@Model.IsLoggedIn)
                             {
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Signup">Sign Up</a>
                             }
