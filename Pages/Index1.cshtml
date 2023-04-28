@@ -5,7 +5,7 @@
     ViewData["Title"] = "Logged in";
 }
 <div class="container">
-    @if (Model.isAdmin)
+    @if (Model.IsAdmin)
     {
         <h1 class="text-center">You have arrived logged in as Admin</h1>
     }
@@ -16,7 +16,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="embed-responsive embed-responsive-16by9">
-                @if (Model.isAdmin)
+                @if (Model.IsAdmin)
                 {
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1" allowfullscreen></iframe>
                 }
@@ -28,4 +28,3 @@
         </div>
     </div>
 </div>
-

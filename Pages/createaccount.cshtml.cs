@@ -8,6 +8,8 @@ namespace SessionFinalProject.Pages
         private readonly UserContext userContext;
         public string Message { get; set; }
         public string Code { get; set; }
+        public bool IsLoggedIn { get; set; }
+        public bool IsAdmin { get; set; }
         public createaccountModel(UserContext   userContext)
         {
             this.userContext = userContext;

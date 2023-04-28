@@ -8,6 +8,8 @@ namespace SessionFinalProject.Pages
     public class SignupModel : PageModel
     {
         private readonly UserContext userContext;
+        public bool IsLoggedIn { get; set; }
+        public bool IsAdmin { get; set; }
         public SignupModel(UserContext userContext)
         {
             this.userContext = userContext;
